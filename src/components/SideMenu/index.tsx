@@ -1,36 +1,24 @@
-import React from 'react';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { makeStyles } from '@mui/material';
+import { styled } from '@mui/material';
 import { Home, Settings, Info } from '@mui/icons-material'; // Example icons from Material-UI
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles(() => ({
-  drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
-  },
-  drawerPaper: {
+const StyledDrawer = styled(Drawer)(() => ({
+  width: drawerWidth,
+  flexShrink: 0,
+  '& .MuiDrawer-paper': {
     width: drawerWidth,
   },
 }));
 
 export const SideMenu = () => {
-  const classes = useStyles();
-
   return (
-    <Drawer
-      className={classes.drawer}
-      variant="permanent"
-      classes={{
-        paper: classes.drawerPaper,
-      }}
-    >
-      <div className={classes.toolbar} />
+    <StyledDrawer variant="permanent">
       <List>
         <ListItem button>
           <ListItemIcon><Home /></ListItemIcon>
@@ -45,6 +33,6 @@ export const SideMenu = () => {
           <ListItemText primary="About" />
         </ListItem>
       </List>
-    </Drawer>
+    </StyledDrawer>
   );
 };

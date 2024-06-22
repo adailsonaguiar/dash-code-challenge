@@ -1,4 +1,4 @@
-import { Box, Avatar, List, ListItem, ListItemAvatar, ListItemText, Typography, Chip } from '@mui/material';
+import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Chip } from '@mui/material';
 import { Title } from '../Title';
 
 interface Employee {
